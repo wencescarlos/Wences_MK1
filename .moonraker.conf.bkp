@@ -28,7 +28,7 @@ trusted_clients =
 
 [announcements]
 subscriptions = 
-	mainsail
+	octoapp.
 
 [update_manager]
 refresh_interval = 168
@@ -47,13 +47,6 @@ path = ~/mainsail-config
 origin = https://github.com/mainsail-crew/mainsail-config.git
 managed_services = klipper
 
-[update_manager crowsnest]
-type = git_repo
-path = ~/crowsnest
-origin = https://github.com/mainsail-crew/crowsnest.git
-managed_services = crowsnest
-install_script = tools/pkglist.sh
-
 [update_manager sonar]
 type = git_repo
 path = ~/sonar
@@ -61,4 +54,29 @@ origin = https://github.com/mainsail-crew/sonar.git
 primary_branch = main
 managed_services = sonar
 install_script = tools/install.sh
+
+[update_manager klipper-macros]
+type = git_repo
+origin = https://github.com/jschuh/klipper-macros.git
+path = ~/printer_data/config/klipper-macros
+primary_branch = main
+is_system_service = False
+managed_services = klipper
+
+[update_manager client klipper_network_status]
+type = git_repo
+path = ~/klipper_network_status
+origin = https://github.com/JeremyRuhland/klipper_network_status.git
+install_script = install.sh
+
+[update_manager octoapp]
+type = git_repo
+channel = beta
+path = /home/pi/octoapp
+origin = https://github.com/crysxd/OctoApp-Plugin.git
+env = /home/pi/octoapp-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoapp
 
