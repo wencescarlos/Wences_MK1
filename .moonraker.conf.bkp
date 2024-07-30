@@ -28,7 +28,7 @@ trusted_clients =
 
 [announcements]
 subscriptions = 
-	octoapp.
+	mainsail
 
 [update_manager]
 refresh_interval = 168
@@ -68,15 +68,4 @@ type = git_repo
 path = ~/klipper_network_status
 origin = https://github.com/JeremyRuhland/klipper_network_status.git
 install_script = install.sh
-
-[update_manager octoapp]
-type = git_repo
-channel = beta
-path = /home/pi/octoapp
-origin = https://github.com/crysxd/OctoApp-Plugin.git
-env = /home/pi/octoapp-env/bin/python
-requirements = requirements.txt
-install_script = install.sh
-managed_services = 
-	octoapp
 
